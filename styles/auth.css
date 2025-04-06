@@ -1,0 +1,184 @@
+body {
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: lightblue;
+    padding: 15px 50px;
+}
+
+.header-logo {
+    padding: 0;
+}
+
+.header-logo img {
+    margin: 0;
+    max-width: 200px;
+    max-height: 300px;
+}
+
+.datetime-container {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+#current-date {
+    margin: 0;
+}
+
+#current-time {
+    margin: 0;
+}
+
+.header-nav {
+    display: flex;
+}
+
+.header-nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.header-nav li {
+    list-style-type: none;
+}
+
+.header-nav a {
+    color: black;
+    text-decoration: none;
+    margin: 0 20px;
+}
+
+.header-nav a:hover {
+    color: blue;
+}
+
+.btn-registr {
+    border: none;
+    padding: 10px;
+    background-color: blue;
+}
+
+.btn-registr a {
+    text-decoration: none;
+    color: white;
+}
+
+#logout-button {
+    border: none;
+    padding: 10px;
+    background-color: blue;
+    color: white;
+}
+
+.username-display {
+    position: relative;
+    left: 80px;
+}
+
+.h2 {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#registration-form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+     /* border: 1px solid black; */
+    padding: 15px;
+    margin: 15px;
+   /* border-radius: 10px; */
+}
+
+#register-form {
+    margin: auto;
+}
+
+input[type="text"],
+input[type="password"] {
+    padding: 10px;
+    margin: 5px 0;
+    width: 250px;
+}
+
+input[type="submit"] {
+    background-color: blue;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+}
+
+.eye {
+    cursor: pointer;
+    margin-right: 30px;
+}
+
+.error-message {
+    color: red;
+}
+
+.footer {
+    background-color: blue;
+    color: white;
+    padding: 10px;
+    margin-top: auto;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.footer-logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.footer-logo img {
+    max-width: 200px;
+    height: auto;
+}
+
+.footer-nav {
+    display: flex;
+    gap: 40px;
+    flex-direction: row;
+}
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.footer-column a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.footer-column a:hover {
+    color: lightblue;
+}
+
+.footer-column img {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+}

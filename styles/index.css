@@ -1,0 +1,427 @@
+body {
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: lightblue;
+    padding: 15px 50px;
+}
+
+.header-logo {
+    padding: 0;
+}
+
+.header-logo img {
+    margin: 0;
+    max-width: 200px;
+    max-height: 300px;
+}
+
+.datetime-container {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+#current-date {
+    margin: 0;
+}
+
+#current-time {
+    margin: 0;
+}
+
+.header-nav {
+    display: flex;
+    position: relative;
+}
+
+.header-nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.header-nav li {
+    list-style-type: none;
+}
+
+.header-nav a {
+    color: black;
+    text-decoration: none;
+    margin: 0 20px;
+}
+
+.header-nav a:hover {
+    color: blue;
+}
+
+.burger {
+    font-size: 25px;
+    cursor: pointer;
+    padding: 10px;
+    position: relative;
+    z-index: 1001;
+}
+
+.burger-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    z-index: 1000;
+    flex-direction: column;
+    padding: 10px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+    display: flex; /* always flex, don't toggle display */
+}
+
+.burger-menu.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.burger-menu a {
+    padding: 10px;
+    text-decoration: none;
+    color: #333;
+    border-bottom: 1px solid #eee;
+}
+
+.burger-menu a:hover {
+    background-color: #f1f1f1;
+    color: #000;
+    transform: translateX(5px);
+}
+
+.btn-registr {
+    border: none;
+    padding: 10px;
+    background-color: blue;
+}
+
+.btn-registr a {
+    text-decoration: none;
+    color: white;
+}
+
+#logout-button {
+    border: none;
+    padding: 10px;
+    background-color: blue;
+    color: white;
+}
+
+.username-display {
+    position: relative;
+    left: 80px;
+}
+
+.opening-container {
+    width: 80%;
+    margin: 30px 15px 30px 15px;
+    margin: auto;
+}
+
+.h1 {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.converter {
+    background-color: #fff;
+    border: 1px solid gray;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 20px;
+    margin: 30px auto;
+    width: 50%;
+    justify-content: space-between;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.input-group select,
+input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    flex: 1;
+    margin-right: 5px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+select:last-child,
+input:last-child {
+    margin-bottom: 0;
+}
+
+#swapButton {
+    padding: 15px 20px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.error {
+    color: red;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.converter-description {
+    margin: auto;
+    width: 80%;
+    margin-bottom: 20px;
+}
+
+.calculate-budget {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.result-budget {
+    background-color: lightseagreen;
+    color: white;
+    width: 260px;
+    padding-left: 5px;
+}
+
+.calculate-budget input {
+    width: 260px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.calculate-budget-description {
+    margin: auto;
+    width: 80%;
+    margin-bottom: 20px;
+}
+
+.habits-calculator {
+    background-color:lightblue;
+    margin: auto;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 550px;
+}
+
+#habits-amount,  #frequency-select, #period-select, #habits-result {
+    padding: 8px;
+    margin: 5px;
+    box-sizing: border-box;
+}
+
+#habits-amount {
+    width: 150px;
+}
+
+#habits-result {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.habits-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+#calculate {
+background-color: green;
+color: white;
+margin-left: 10px;
+padding: 10px;
+border: none;
+border-radius: 10px;
+}
+
+#clear {
+background-color: red;
+color: white;
+margin-right: 10px;
+padding: 10px;
+border: none;
+border-radius: 10px;
+}
+
+.trans-story, .habits-stat {
+    text-align: center;
+}
+
+.habits-calculator-description {
+    margin: auto;
+    width: 80%;
+    margin-bottom: 20px;
+}
+
+.inflation-calculator {
+    background-color: lightcyan;
+    margin: auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+#current-amount, #current-year, #future-year, #inflation-rate {
+    margin-bottom: 10px;
+}
+
+.inflation-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+#calculate-inflation {
+    background-color: green;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+#clear-inflation {
+   background-color: red;
+   color: white;
+   border: none;
+   border-radius: 10px;
+   padding: 10px;
+}
+
+.inflation-calculator-description {
+    margin: auto;
+    width: 80%;
+    margin-bottom: 20px;
+}
+
+.cost-tracker { 
+    max-width: 600px; 
+    margin: auto; 
+    margin-bottom: 20px;
+}
+
+.cost-tracker input,
+.cost-tracker select {
+    width: auto;
+    flex: none;
+}
+
+.cost-tracker table { 
+    width: auto; 
+    border-collapse: collapse;
+    margin: auto;
+    margin-top: 20px; 
+}
+
+th, td { 
+    border: 1px solid #ddd; 
+    padding: 8px; 
+    text-align: left; 
+}
+
+th { 
+    background: #f4f4f4; 
+}
+
+.cost-tracker canvas {
+    width: 500px !important;
+    height: 500px !important;
+    margin: auto;
+}
+
+.cost-tracker .delete-btn { 
+    background: red; 
+    color: white; 
+    border: none; 
+    padding: 5px; 
+    cursor: pointer; 
+}
+
+.cost-tracker-description {
+    margin: auto;
+    width: 80%;
+    margin-bottom: 20px;
+}
+
+.footer {
+    background-color: blue;
+    color: white;
+    padding: 10px;
+    margin-top: auto;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.footer-logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.footer-logo img {
+    max-width: 200px;
+    height: auto;
+}
+
+.footer-nav {
+    display: flex;
+    gap: 40px;
+    flex-direction: row;
+}
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.footer-column a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.footer-column a:hover {
+    color: lightblue;
+}
+
+.footer-column img {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+}

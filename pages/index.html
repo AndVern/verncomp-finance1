@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial.scale=1.0">
+    <title>VernComp Finance</title>
+    <link rel="stylesheet" href="../styles/index.css">
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.7.1.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../scripts/index.js"></script>
+    <script src="../scripts/auth.js"></script>
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-logo">
+            <img src="../images/verncomp-finance-logo.png" alt="VernComp Finance">
+        </div>
+        <div class="datetime-container">
+            <p id="current-date"></p>
+            <p id="current-time"></p>
+        </div>
+        <nav class="header-nav">
+            <ul>
+                <li>
+                    <a href="index.html">Головна</a>
+                </li>
+                <li>
+                    <a href="about.html">Про мене</a>
+                </li>
+                <li>
+                    <a href="info.html">Про проект</a>
+                </li>
+            </ul>
+
+            <div class="burger" id="burger">
+                ☰
+            </div>
+            
+            <nav class="burger-menu" id="burger-menu">
+                <a href="#converter">Конвертер валют</a>
+                <a href="#budget">Бюджет 50/30/20</a>
+                <a href="#habits">Звички</a>
+                <a href="#inflation">Інфляція</a>
+                <a href="#tracker">Трекер витрат</a>
+            </nav>
+        </nav>
+        
+        <div class="username-display">
+            <span id="username-display"></span>
+        </div>
+        <button class="btn-registr" id="register-link">
+            <a href="auth.html">Реєстрація</a>
+        </button>
+        <button id="logout-button" style="display: none;">Вийти</button>
+    </header>
+    <main class="main">
+        <div class="opening-container">
+            <h3>Вітаємо на VernComp Finance – вашому надійному помічнику у світі особистих фінансів! Ми зібрали для вас ключові інструменти, які допоможуть вам контролювати свої витрати, заощаджувати кошти та приймати обґрунтовані фінансові рішення. Незалежно від ваших цілей – чи то планування бюджету, відстеження витрат, конвертація валют або усвідомлення економії від відмови від шкідливих звичок – у нас є все необхідне.</h3>
+            <h3>Розпочніть вже сьогодні та зробіть крок до фінансової стабільності та добробуту!</h3>
+        </div>
+
+        <hr>
+
+        <h1 class="h1" id="#converter">Конвертер валют</h1>
+        <div class="converter">
+            <div class="input-group">
+                <select name="" id="fromCurrency">
+
+                </select>
+                <input type="number" id="fromAmount" min="0" value="100">
+            </div>
+            <button id="swapButton">⇄</button>
+            <div class="input-group">
+                <select name="" id="toCurrency">
+
+                </select>
+                <input type="number" id="toAmount" min="0" value="0">
+            </div>
+            <div class="error" id="error">
+
+            </div>
+        </div>
+        <div class="converter-description">
+          <h3>Цей конвертер валют дозволяє швидко та легко перевести одну валюту в іншу за актуальним курсом Національного Банку України.</h3>
+        </div>
+
+        <hr>
+
+        <h1 class="h1" id="budget">Калькулятор бюджету 50/30/20</h1>
+        <div class="calculate-budget">
+            <label for="amount"></label>
+            <input type="number" id="budget-amount" placeholder="Введіть суму">
+            <div class="result-budget">
+                <h2>Результат:</h2>
+                <h3>50% - потреби <span id="needs">0</span></h3>
+                <h3>30% - бажання <span id="wants">0</span></h3>
+                <h3>20% - накопичення <span id="savings">0</span></h3>
+            </div>
+        </div>
+        <div class="calculate-budget-description">
+            <h3>Цей калькулятор допоможе вам ефективно розподілити ваш дохід за правилом 50/30/20: <br>
+                50% – на необхідні витрати; <br>
+                30% – на бажання; <br>
+                20% – на заощадження та інвестиції. <br>
+                Просто введіть свій дохід, і отримаєте оптимальний розподіл коштів для фінансової стабільності та зростання!</h3>
+        </div>
+        <hr>
+        <h1 class="h1">Калькулятор економії на звичках</h1>
+    <div class="habits-calculator" id="habits">
+        <div>
+            <p>Я витрачаю на звичку <input type="number" id="habits-amount" placeholder="100"> грн на 
+               <select id="frequency">
+                    <option value="day">день</option>
+                    <option value="week">тиждень</option>
+                    <option value="month">місяць</option>
+                    <option value="year">рік</option>
+               </select>
+            </p>
+        </div>
+        <div>
+            <p>якщо відмовлюсь, то за 
+                <select id="period">
+                    <option value="day">день</option>
+                    <option value="week">тиждень</option>
+                    <option value="month">місяць</option>
+                    <option value="year">рік</option>
+                </select>
+                я зекономлю <span id="habits-result"></span>
+            </p>
+        </div>
+        <div class="habits-buttons">
+            <button id="calculate">Розрахувати</button>
+            <button id="clear">Очистити</button>
+        </div>
+    </div>
+    <div class="habits-calculator-description">
+          <h3>
+            Замислювалися, скільки грошей ви витрачаєте на свої шкідливі звички? Цей простий калькулятор допоможе вам це з'ясувати та покаже потенційну економію, якщо ви вирішите від них відмовитися. Просто введіть суму ваших витрат на звичку за певний період (день, тиждень, місяць чи рік) та оберіть, за який час ви хочете побачити можливу економію. Натисніть "Розрахувати" – і ви одразу дізнаєтеся, скільки грошей залишиться у вашому гаманці! Використовуйте цю інформацію як додаткову мотивацію для здорового способу життя.
+          </h3>
+    </div>
+
+        <hr>
+
+        <h1 class="h1" id="inflation">Калькулятор інфляції</h1>
+        <div class="inflation-calculator">
+            <label for="current-amount">Початкова сума:</label>
+            <input type="number" id="current-amount" placeholder="Наприклад, 1000">
+    
+            <label for="current-year">Поточний рік:</label>
+            <input type="number" id="current-year" value="2025">
+    
+            <label for="future-year">Майбутній рік:</label>
+            <input type="number" id="future-year">
+    
+            <label for="inflation-rate">Очікуваний річний рівень інфляції (%):</label>
+            <input type="number" id="inflation-rate" placeholder="Наприклад, 5">
+
+            <div class="inflation-buttons">
+                <button id="calculate-inflation">Розрахувати</button>
+                <button id="clear-inflation">Очистити</button>
+            </div>
+    
+            <div id="inflation-result"></div>
+        </div>
+        <div class="inflation-calculator-description">
+          <h3>  Калькулятор інфляції – це онлайн-інструмент, призначений для оцінки впливу інфляції на вартість грошей з часом. Щоб скористатися калькулятором, вам необхідно ввести наступні дані: </h3>
+<h3> Початкова сума: Кількість грошей, вартість якої ви хочете оцінити. </h3>
+<h3> Поточний рік: Рік, на який припадає початкова сума. </h3>
+<h3> Майбутній рік: Рік, для якого ви хочете розрахувати купівельну спроможність. </h3>
+<h3> Річний рівень інфляції (%): Очікуваний середній відсоток зростання цін на товари та послуги протягом кожного року між поточним та майбутнім. </h3>
+        </div>
+
+        <hr>
+
+        <div class="cost-tracker">
+            <h1 class="h1" id="tracker">Трекер витрат</h1>
+            <label>Категорія:</label>
+            <select id="category">
+                <option value="Їжа">Їжа</option>
+                <option value="Транспорт">Транспорт</option>
+                <option value="Розваги">Розваги</option>
+                <option value="Доходи">Доходи</option>
+            </select>
+            <label>Сума:</label>
+            <input type="number" id="tracker-amount" placeholder="Введіть суму">
+            <button onclick="addTransaction()">Додати</button>
+            
+            <h2 class="trans-story">Історія транзакцій</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Категорія</th>
+                        <th>Сума</th>
+                        <th>Дія</th>
+                    </tr>
+                </thead>
+                <tbody id="transactions"></tbody>
+            </table>
+            
+            <h3 class="habits-stat">Статистика</h3>
+            <canvas id="chart"></canvas>
+        </div>
+        <div class="cost-tracker-description">
+            <h3>
+                Трекер витрат допомагає вам контролювати особисті фінанси, фіксуючи доходи та витрати за категоріями. Аналізуйте, на що ви витрачаєте найбільше, та приймайте обґрунтовані фінансові рішення.
+            </h3>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2025 Всі права захищено</p>
+            <div class="footer-logo">
+                <img src="../images/verncomp-finance-logo.png" alt="VernComp Finance">
+            </div>
+            <nav class="footer-nav">
+                <div class="footer-column">
+                    <a href="https://www.youtube.com" target="_blank"> <img src="../images/youtube-icon.png" alt="Youtube">Youtube</a>
+                    <a href="https://telegram.org" target="_blank"> <img src="../images/telegram-icon.png" alt="Telegram">Telegram</a>
+                    <a href="https://www.instagram.com" target="_blank"> <img src="../images/instagram-icon.png" alt="Instagram">Instagram</a>
+                </div>
+                <div class="footer-column">
+                    <a href="https://github.com/AndVern" target="_blank"> <img src="../images/github-icon.png" alt="GitHub">GitHub</a>
+                    <a href="https://www.facebook.com" target="_blank"> <img src="../images/facebook-icon.png" alt="Facebook">Facebook</a>
+                    <a href="https://www.facebook.com" target="_blank"> <img src="../images/twitter-icon.png" alt="Twitter">Twitter</a>
+                </div>
+            </nav>
+        </div>
+    </footer>
+</body>
+</html>
